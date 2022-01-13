@@ -1,0 +1,2 @@
+<Context>
+	<Resource name='"jdbc/HAPPY"' auth='"Container"' type='"jakarta.sql.DataSource"' maxTotal='"100"' maxIdle='"30"' maxWaitMillis='"10000"' username='"root"' password='""' driverClassName='"com.mysql.jdbc.Driver"' url='"jdbc:mysql://localhost:3306/HAPPY"'></Resource></Context>
