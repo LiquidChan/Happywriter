@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>  
+<%@page import="java.sql.*"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -41,6 +42,7 @@
 	%> 
 	
 	
+	
 <script>
 // Total Price Calculator
 function calc() {
@@ -68,14 +70,14 @@ $(function() {
     
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#">HappyWriter</a>
+	    <a class="navbar-brand" href="index.jsp">HappyWriter</a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="user">User</a>
+	         
 	        </li>
 	          	<%
 				Integer admin = (Integer)session.getAttribute("admin");
@@ -103,8 +105,6 @@ $(function() {
 	<br>
     <div class="container">
       <h3>Artikelkonfiguration</h3>
-	
-	
 	  <table class="table">
 	  <thead>
 	    <tr>
@@ -133,7 +133,7 @@ $(function() {
 	      </c:forEach>
 	      
 	      <td>
-	      	<form method="post" action="KaufenArtikel">
+	      	<form method="post" action="index.jsp">
 	      		<c:forEach var="inhalt" items="${listInhalt.rows}">
 	      		<div class="form-check">
 				  <input class="form-check-input checks" type="checkbox" data-price="<c:out value="${inhalt.preis}"/>" value="<c:out value="${inhalt.id}"/>" id="check<c:out value="${inhalt.bezeichnung}" />" name="inhalt" />
